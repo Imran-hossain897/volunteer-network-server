@@ -25,7 +25,6 @@ client.connect(err => {
 
   app.post('/addVolunteer', (req, res)=>{
     const volunteers = req.body
-    console.log(volunteers)
     volunteerCollections.insertOne(volunteers)
     .then(result=>{
         res.send(result.insertedCount>0)
